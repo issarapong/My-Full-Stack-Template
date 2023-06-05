@@ -260,9 +260,7 @@ mkdir src/utils
 touch src/utils/localstorage.js
 touch src/utils/create-classes.js  
 touch src/utils/timeago.js
-
-
-
+```
 
 ## Frontend-api Folder and file Structure 
 
