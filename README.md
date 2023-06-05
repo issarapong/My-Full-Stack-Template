@@ -1,12 +1,18 @@
 # My Full Stack Template
-
+## CRUD
+|  | Postman/Axios | Mysql |
+|---|---|---|
+| C | POST | INSERT |
+| R | GET | SELECT |
+| U | PUT/PATCH | UPDATE |
+| D | DELETE | DELETE |
 ## Frontend/Backend  basic CRUD member system
 
 -Register  
 -Login  
 -member  
 
-## Project Folder Structure
+##  Project Folder Structure
 
 📦My-Full-Stack-Template  
  ┣ 📂backend-api  
@@ -21,6 +27,7 @@ npm i -g pnpm
 
 ## Backend-api Package Install
 ```
+cd backend-api
 pnpm init 
 pnpm add express
 pnpm add mysql2
@@ -168,6 +175,7 @@ JWT_EXPIRE_IN =15d
 ## Frontend-api Package Install
 
 ```
+cd frontend-web
 pnpm create vite . --template react
 pnpm add react-router-dom
 pnpm add react-hook-form
