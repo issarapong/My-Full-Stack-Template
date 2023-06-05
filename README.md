@@ -37,7 +37,7 @@ pnpm add multer
 pnpm add cloudinary
 ```
 
-
+## Create folder and file *** Base on fackbuck project ***
 ```
 mkdir public
 mkdir public/images
@@ -73,6 +73,7 @@ touch .sequelizerc
 
 
 ```
+## crete config
 ```
 sequelize init:models
 touch src/models/user.js
@@ -161,126 +162,208 @@ JWT_EXPIRE_IN =15d
 
 <hr>
 # Frontend
+
 ## Frontend-api Package Install
 
 ```
 pnpm create vite . --template react
+pnpm add react-router-dom
+pnpm add react-hook-form
+pnpm add @hookform/resolvers
+pnpm add react-redux @reduxjs/toolkit
 pnpm add axios
 pnpm add react-toastify   
 pnpm add react-redux @reduxjs/toolkit
+pnpm add joi
 pnpm add javascript-time-ago
+pnpm add font-awesome
+pnpm add daisyui
+pnpm add -D tailwindcss postcss autoprefixer
+pnpm exec tailwindcss init -p
 ```
-
-
-
-
-
-
-
-
-
-
-## Frontend-api Folder and file Structure
-
+## Create folder and file *** Base on fackbuck project ***
 ```
-📦Frontend-web
- ┣ 📂public
- ┃ ┗ 📜vite.svg
- ┣ 📂src
- ┃ ┣ 📂api
- ┃ ┃ ┣ 📜auth-api.js
- ┃ ┃ ┣ 📜axios.js
- ┃ ┃ ┣ 📜friend-api.js
- ┃ ┃ ┗ 📜user-api.js
- ┃ ┣ 📂assets
- ┃ ┃ ┣ 📜blank.png
- ┃ ┃ ┗ 📜cover.jpg
- ┃ ┣ 📂components
- ┃ ┃ ┣ 📜Avatar.jsx
- ┃ ┃ ┣ 📜Loading.jsx
- ┃ ┃ ┗ 📜Modal.jsx
- ┃ ┣ 📂config
- ┃ ┃ ┗ 📜env.js
- ┃ ┣ 📂features
- ┃ ┃ ┣ 📂auth
- ┃ ┃ ┃ ┣ 📂components
- ┃ ┃ ┃ ┃ ┣ 📜LoginForm.jsx
- ┃ ┃ ┃ ┃ ┣ 📜LoginInput.jsx
- ┃ ┃ ┃ ┃ ┣ 📜ProtectedRoute.jsx
- ┃ ┃ ┃ ┃ ┣ 📜RedirectIfAuthenticated.jsx
- ┃ ┃ ┃ ┃ ┣ 📜RegisterContainer.jsx
- ┃ ┃ ┃ ┃ ┣ 📜RegisterForm.jsx
- ┃ ┃ ┃ ┃ ┣ 📜RegisterInput.jsx
- ┃ ┃ ┃ ┃ ┗ 📜inputErrorMessage.jsx
- ┃ ┃ ┃ ┣ 📂slice
- ┃ ┃ ┃ ┃ ┗ 📜auth-slice.js
- ┃ ┃ ┃ ┗ 📂validators
- ┃ ┃ ┃ ┃ ┣ 📜validate-login.js
- ┃ ┃ ┃ ┃ ┗ 📜validate-register.js
- ┃ ┃ ┣ 📂post
- ┃ ┃ ┃ ┣ 📂components
- ┃ ┃ ┃ ┃ ┣ 📜CreatePostBox.jsx
- ┃ ┃ ┃ ┃ ┣ 📜Post.jsx
- ┃ ┃ ┃ ┃ ┣ 📜PostContainer.jsx
- ┃ ┃ ┃ ┃ ┣ 📜PostContainer_nowok.jsx
- ┃ ┃ ┃ ┃ ┣ 📜PostFooter.jsx
- ┃ ┃ ┃ ┃ ┣ 📜PostForm.jsx
- ┃ ┃ ┃ ┃ ┣ 📜PostHeader.jsx
- ┃ ┃ ┃ ┃ ┗ 📜PostList.jsx
- ┃ ┃ ┗ 📂profile
- ┃ ┃ ┃ ┣ 📂components
- ┃ ┃ ┃ ┃ ┣ 📜CoverImage.jsx
- ┃ ┃ ┃ ┃ ┣ 📜EditProfileForm.jsx
- ┃ ┃ ┃ ┃ ┣ 📜FormButton.jsx
- ┃ ┃ ┃ ┃ ┣ 📜FriendAction.jsx
- ┃ ┃ ┃ ┃ ┣ 📜MeAction.jsx
- ┃ ┃ ┃ ┃ ┣ 📜PictureForm.jsx
- ┃ ┃ ┃ ┃ ┣ 📜ProfileContainer.jsx
- ┃ ┃ ┃ ┃ ┣ 📜ProfileInfo.jsx
- ┃ ┃ ┃ ┃ ┣ 📜ProfileWrapper.jsx
- ┃ ┃ ┃ ┃ ┣ 📜ReceiverAction.jsx
- ┃ ┃ ┃ ┃ ┣ 📜RequesterAction.jsx
- ┃ ┃ ┃ ┃ ┗ 📜UnknownAction.jsx
- ┃ ┃ ┃ ┣ 📂context
- ┃ ┃ ┃ ┃ ┗ 📜ProfileContextProvider.jsx
- ┃ ┃ ┃ ┗ 📂hooks
- ┃ ┃ ┃ ┃ ┗ 📜useProfile.js
- ┃ ┣ 📂hooks
- ┃ ┃ ┗ 📜useForm.js
- ┃ ┣ 📂icons
- ┃ ┃ ┗ 📜index.jsx
- ┃ ┣ 📂layouts
- ┃ ┃ ┣ 📜Container.jsx
- ┃ ┃ ┣ 📜Dropdown.jsx
- ┃ ┃ ┣ 📜Header.jsx
- ┃ ┃ ┣ 📜Menu.jsx
- ┃ ┃ ┗ 📜MenuItem.jsx
- ┃ ┣ 📂pages
- ┃ ┃ ┣ 📜FriendPage.jsx
- ┃ ┃ ┣ 📜HomePage.jsx
- ┃ ┃ ┣ 📜LoginPage.jsx
- ┃ ┃ ┗ 📜ProfilePage.jsx
- ┃ ┣ 📂route
- ┃ ┃ ┗ 📜Router.jsx
- ┃ ┣ 📂store
- ┃ ┃ ┗ 📜index.js
- ┃ ┣ 📂utils
- ┃ ┃ ┣ 📜create-classes.js
- ┃ ┃ ┣ 📜localstorage.js
- ┃ ┃ ┗ 📜timeago.js
- ┃ ┣ 📜App.jsx
- ┃ ┣ 📜index.css
- ┃ ┗ 📜main.jsx
- ┣ 📜.eslintrc.cjs
- ┣ 📜.gitignore
- ┣ 📜README.md
- ┣ 📜index.html
- ┣ 📜package.json
- ┣ 📜pnpm-lock.yaml
- ┣ 📜postcss.config.js
- ┣ 📜tailwind.config.js
- ┗ 📜vite.config.js
- ```
+rm src/App.css
+mkdir src/api
+touch src/api/auth-api.js
+touch src/api/axios.js
+touch src/api/user-api.js
+mkdir src/components
+touch src/components/Avatar.jsx
+touch src/components/Loading.jsx
+touch src/components/Modal.jsx
+mkdir src/config
+touch src/config/env.js
+mkdir src/features
+mkdir src/features/auth
+mkdir src/features/auth/components
+touch src/features/auth/components/LoginForm.jsx
+touch src/features/auth/components/LoginInput.jsx
+touch src/features/auth/components/ProtectedRoute.jsx
+touch src/features/auth/components/RedirectIfAuthenticated.jsx
+touch src/features/auth/components/RegisterContainer.jsx 
+touch src/features/auth/components/RegisterForm.jsx
+touch src/features/auth/components/RegisterInput.jsx
+touch src/features/auth/components/inputErrorMessage.jsx
+mkdir src/features/auth/slice
+touch src/features/auth/auth-slice.js
+mkdir src/features/auth/validators
+touch src/features/auth/validators/validate-login.js
+touch src/features/auth/validators/validate-register.js
+mkdir src/features/post
+mkdir src/features/post/components
+touch src/features/post/components/CreatePostBox.jsx
+touch src/features/post/components/Post.jsx
+touch src/features/post/components/PostContainer.jsx
+touch src/features/post/components/PostFooter.jsx
+touch src/features/post/components/PostForm.jsx
+touch src/features/post/components/PostHeader.jsx
+touch src/features/post/components/PostList.jsx
+mkdir src/features/profile
+mkdir src/features/profile/components
+touch src/features/profile/components/CoverImage.jsx
+touch src/features/profile/components/EditProfileForm.jsx
+touch src/features/profile/components/FormButton.jsx
+touch src/features/profile/components/FriendAction.jsx
+touch src/features/profile/components/MeAction.jsx
+touch src/features/profile/components/PictureForm.jsx
+touch src/features/profile/components/ProfileContainer.jsx
+touch src/features/profile/components/ProfileInfo.jsx
+touch src/features/profile/components/ProfileWrapper.jsx
+touch src/features/profile/components/ReceiverAction.jsx 
+touch src/features/profile/components/RequesterAction.jsx 
+touch src/features/profile/components/UnknownAction.jsx
+mkdir src/features/profile/context
+touch src/features/profile/context/ProfileContextProvider.jsx
+mkdir src/features/profile/hooks
+touch src/features/profile/hooks/useProfile.js
+mkdir src/hooks
+touch src/hooks/useForm.js
+mkdir src/icons
+touch src/icons/index.jsx
+mkdir src/layouts
+touch src/layouts/Container.jsx
+touch src/layouts/Dropdown.jsx
+touch src/layouts/Header.jsx
+touch src/layouts/Menu.jsx
+touch src/layouts/MenuItem.jsx
+mkdir src/pages
+touch src/pages/FriendPage.jsx
+touch src/pages/HomePage.jsx
+touch src/pages/LoginPage.jsx
+touch src/pages/ProfilePage.jsx
+mkdir src/route
+touch src/route/Router.jsx
+mkdir src/store
+touch src/store/index.js
+mkdir src/utils
+touch src/utils/localstorage.js
+touch src/utils/create-classes.js  
+touch src/utils/timeago.js
+
+
+
+
+## Frontend-api Folder and file Structure 
+
+
+📦Frontend-web  
+ ┣ 📂public  
+ ┃ ┗ 📜vite.svg  
+ ┣ 📂src  
+ ┃ ┣ 📂api  
+ ┃ ┃ ┣ 📜auth-api.js  
+ ┃ ┃ ┣ 📜axios.js  
+ ┃ ┃ ┣ 📜friend-api.js  
+ ┃ ┃ ┗ 📜user-api.js  
+ ┃ ┣ 📂assets  
+ ┃ ┃ ┣ 📜blank.png  
+ ┃ ┃ ┗ 📜cover.jpg  
+ ┃ ┣ 📂components  
+ ┃ ┃ ┣ 📜Avatar.jsx  
+ ┃ ┃ ┣ 📜Loading.jsx  
+ ┃ ┃ ┗ 📜Modal.jsx  
+ ┃ ┣ 📂config  
+ ┃ ┃ ┗ 📜env.js  
+ ┃ ┣ 📂features  
+ ┃ ┃ ┣ 📂auth  
+ ┃ ┃ ┃ ┣ 📂components  
+ ┃ ┃ ┃ ┃ ┣ 📜LoginForm.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜LoginInput.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜ProtectedRoute.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜RedirectIfAuthenticated.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜RegisterContainer.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜RegisterForm.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜RegisterInput.jsx  
+ ┃ ┃ ┃ ┃ ┗ 📜inputErrorMessage.jsx  
+ ┃ ┃ ┃ ┣ 📂slice  
+ ┃ ┃ ┃ ┃ ┗ 📜auth-slice.js  
+ ┃ ┃ ┃ ┗ 📂validators  
+ ┃ ┃ ┃ ┃ ┣ 📜validate-login.js  
+ ┃ ┃ ┃ ┃ ┗ 📜validate-register.js  
+ ┃ ┃ ┣ 📂post  
+ ┃ ┃ ┃ ┣ 📂components  
+ ┃ ┃ ┃ ┃ ┣ 📜CreatePostBox.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜Post.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜PostContainer.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜PostFooter.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜PostForm.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜PostHeader.jsx  
+ ┃ ┃ ┃ ┃ ┗ 📜PostList.jsx  
+ ┃ ┃ ┗ 📂profile  
+ ┃ ┃ ┃ ┣ 📂components  
+ ┃ ┃ ┃ ┃ ┣ 📜CoverImage.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜EditProfileForm.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜FormButton.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜FriendAction.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜MeAction.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜PictureForm.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜ProfileContainer.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜ProfileInfo.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜ProfileWrapper.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜ReceiverAction.jsx  
+ ┃ ┃ ┃ ┃ ┣ 📜RequesterAction.jsx  
+ ┃ ┃ ┃ ┃ ┗ 📜UnknownAction.jsx  
+ ┃ ┃ ┃ ┣ 📂context  
+ ┃ ┃ ┃ ┃ ┗ 📜ProfileContextProvider.jsx  
+ ┃ ┃ ┃ ┗ 📂hooks  
+ ┃ ┃ ┃ ┃ ┗ 📜useProfile.js  
+ ┃ ┣ 📂hooks  
+ ┃ ┃ ┗ 📜useForm.js  
+ ┃ ┣ 📂icons  
+ ┃ ┃ ┗ 📜index.jsx  
+ ┃ ┣ 📂layouts  
+ ┃ ┃ ┣ 📜Container.jsx  
+ ┃ ┃ ┣ 📜Dropdown.jsx  
+ ┃ ┃ ┣ 📜Header.jsx  
+ ┃ ┃ ┣ 📜Menu.jsx  
+ ┃ ┃ ┗ 📜MenuItem.jsx  
+ ┃ ┣ 📂pages  
+ ┃ ┃ ┣ 📜FriendPage.jsx  
+ ┃ ┃ ┣ 📜HomePage.jsx  
+ ┃ ┃ ┣ 📜LoginPage.jsx  
+ ┃ ┃ ┗ 📜ProfilePage.jsx  
+ ┃ ┣ 📂route  
+ ┃ ┃ ┗ 📜Router.jsx  
+ ┃ ┣ 📂store  
+ ┃ ┃ ┗ 📜index.js  
+ ┃ ┣ 📂utils  
+ ┃ ┃ ┣ 📜create-classes.js  
+ ┃ ┃ ┣ 📜localstorage.js  
+ ┃ ┃ ┗ 📜timeago.js  
+ ┃ ┣ 📜App.jsx  
+ ┃ ┣ 📜index.css  
+ ┃ ┗ 📜main.jsx  
+ ┣ 📜.eslintrc.cjs  
+ ┣ 📜.gitignore  
+ ┣ 📜README.md  
+ ┣ 📜index.html  
+ ┣ 📜package.json  
+ ┣ 📜pnpm-lock.yaml  
+ ┣ 📜postcss.config.js  
+ ┣ 📜tailwind.config.js  
+ ┗ 📜vite.config.js  
+ 
 
 ## Database
 
