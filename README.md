@@ -44,7 +44,9 @@ pnpm add multer
 pnpm add cloudinary
 ```
 
-## Create folder and file *** Base on fackbuck project ***
+## Create folder and file  *** Base on fackbuck project ***  
+
+Copy and past CLI below to Vscode integrete terminal  
 ```
 mkdir public
 mkdir public/images
@@ -191,7 +193,9 @@ pnpm add daisyui
 pnpm add -D tailwindcss postcss autoprefixer
 pnpm exec tailwindcss init -p
 ```
-## Create folder and file *** Base on fackbuck project ***
+## Create folder and file *** Base on fackbuck project ***  
+
+Copy and past CLI below to Vscode integrete terminal  
 ```
 rm src/App.css
 mkdir src/api
@@ -373,7 +377,7 @@ touch src/utils/timeago.js
  ┗ 📜vite.config.js  
  
 
-## Database
+## Database name crud_member
 
 ### Table members/users schema
 
